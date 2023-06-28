@@ -23,3 +23,16 @@ if (require.main === module) {
 }
 
 module.exports = isPalindrome;
+function isPalindrome(str) {
+  const formattedStr = str.toLowerCase().replace(/[^a-z0-9]/g, '');
+  const reversedStr = formattedStr.split('').reverse().join('');
+  return formattedStr === reversedStr;
+}
+
+
+console.log(isPalindrome('abba')); // true
+console.log(isPalindrome('racecar')); // true
+console.log(isPalindrome('a')); // true
+console.log(isPalindrome('robot')); // false
+console.log(isPalindrome('ab')); // false
+
